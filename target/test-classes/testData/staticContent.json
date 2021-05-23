@@ -1,0 +1,8 @@
+{
+  "errorTitle": "Error signing into the account",
+  "errorMessage": "Email or password is incorrect.",
+  "errorEmailEmpty": "Email cannot be empty.",
+  "errorPasswordEmpty": "Password cannot be empty.",
+  "errorEmailInvalid": "Email is invalid.",
+  "forgotPasswordPageTitle": "Forgot your password? - Comm100"
+}

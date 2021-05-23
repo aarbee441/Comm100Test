@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+.cucumber-react section {
+  margin-bottom: 1em;
+}
+.cucumber-react .status-passed {
+  color: #2CB14A;
+}
+.cucumber-react .status-skipped {
+  color: #00A0CC;
+}
+.cucumber-react .status-pending {
+  color: #FFAD33;
+}
+.cucumber-react .status-undefined {
+  color: #FFAD33;
+}
+.cucumber-react .status-ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .status-failed {
+  color: #BB0000;
+}
+.cucumber-react .status-unknown {
+  color: #B6BECB;
+}
+.cucumber-react .data-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .data-table th {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .data-table td {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .data-table td__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .data-table td__step {
+  flex-grow: 1;
+}
+.cucumber-react .examples-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .examples-table th {
+  padding: 0.3em;
+}
+.cucumber-react .examples-table th + th {
+  border: 1px solid #4B5662;
+}
+.cucumber-react .examples-table td {
+  padding: 0.3em;
+}
+.cucumber-react .examples-table td + td {
+  border: 1px solid #4B5662;
+}
+.cucumber-react .examples-table td + td__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .examples-table td + td__step {
+  flex-grow: 1;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .indent {
+  margin-left: 1em;
+}
+.cucumber-react .keyword {
+  font-weight: bold;
+}
+.cucumber-react .step {
+  padding: 0.1em;
+}
+.cucumber-react .step-text {
+  font-weight: normal;
+}
+.cucumber-react .step-param {
+  font-weight: normal;
+}
+.cucumber-react .step-container {
+  display: flex;
+}
+.cucumber-react .step-container__step {
+  flex-grow: 1;
+}
+.cucumber-react .text_status_icon_container {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .error-message {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .tag-list {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .attachment .attachment-icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .attachment-image {
+  margin-top: 1em;
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"12.1.1","implementation":{"name":"cucumber-jvm","version":"6.1.1"},"runtime":{"name":"Oracle Corporation","version":"1.8.0_251"},"os":{"name":"Mac OS X"},"cpu":{"name":"x86_64"}}},{"testRunStarted":{"timestamp":{"seconds":"1621742499","nanos":333000000}}},{"source":{"uri":"file:///Users/risbhard2/Desktop/Comm100/src/test/resources/features/Login.feature","data":"Feature: Login Scenarios\n\n  Scenario Outline: Login with Invalid credentials\n    Given User navigates to login page\n    When User enters the email address as \"\u003cemail\u003e\"\n    And User enters password as \"\u003cpassword\u003e\"\n    And User clicks on Sign In button\n    Then User should see error message on Login screen\n\n    Examples:\n      | email                | password    |\n      | rishabhb441@gmail.com  | Comm@0100  |\n\n  Scenario: Validate Forgot your password navigation\n    Given User navigates to login page\n    When User clicks on Forgot your password link\n    Then User should navigate to Forgot your password page\n\n  Scenario Outline: Login Scenario for empty Password field\n    Given User navigates to login page\n    When User enters email address as \"\u003cemail\u003e\"\n    And User clicks on Sign In button\n    Then User should see inline error messages for password field\n\n    Examples:\n      | email                |\n      | rishabhb441@gmail.com  |\n\n  Scenario Outline: Login Scenario for invalid Email address\n    Given User navigates to login page\n    When User enters email address as \"\u003cemail\u003e\"\n    And  User enters password as \"\u003cpassword\u003e\"\n    And User clicks on Sign In button\n    Then User should see inline error messages for invalid email\n\n    Examples:\n      | email                | password    |\n      | rishabhb441            | Comm@0100  |","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///Users/risbhard2/Desktop/Comm100/src/test/resources/features/Login.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Login Scenarios","children":[{"scenario":{"location":{"line":3,"column":3},"keyword":"Scenario Outline","name":"Login with Invalid credentials","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"User navigates to login page","id":"f2a2cde0-96b7-4184-be15-679cf1899ba3"},{"location":{"line":5,"column":5},"keyword":"When ","text":"User enters the email address as \"\u003cemail\u003e\"","id":"cbcef044-b4d8-4ee5-a6fc-ce0f53956cc5"},{"location":{"line":6,"column":5},"keyword":"And ","text":"User enters password as \"\u003cpassword\u003e\"","id":"f83dc381-158b-45a8-af5b-8fb7ad859a0d"},{"location":{"line":7,"column":5},"keyword":"And ","text":"User clicks on Sign In button","id":"20d0ce0a-5337-4a79-bc39-b71c4ba252a7"},{"location":{"line":8,"column":5},"keyword":"Then ","text":"User should see error message on Login screen","id":"d6ebcf84-5d87-4d53-b087-3c7ffd8c990e"}],"examples":[{"location":{"line":10,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":11,"column":7},"cells":[{"location":{"line":11,"column":9},"value":"email"},{"location":{"line":11,"column":32},"value":"password"}],"id":"43c315cf-ae75-4e90-a8c7-7ec3b67a7c7b"},"tableBody":[{"location":{"line":12,"column":7},"cells":[{"location":{"line":12,"column":9},"value":"rishabhb441@gmail.com"},{"location":{"line":12,"column":34},"value":"Comm@0100"}],"id":"e587bfc2-10ba-476c-8300-78549187707d"}],"id":"05600602-7ee3-4383-b37d-de4dce9c34ae"}],"id":"5bbeddf3-1f86-4b75-9c8d-bafaaac7747f"}},{"scenario":{"location":{"line":14,"column":3},"keyword":"Scenario","name":"Validate Forgot your password navigation","steps":[{"location":{"line":15,"column":5},"keyword":"Given ","text":"User navigates to login page","id":"8c8ff54e-622f-4844-b2b8-31e3d47ab3ca"},{"location":{"line":16,"column":5},"keyword":"When ","text":"User clicks on Forgot your password link","id":"a7040013-d05b-41a0-aebe-f543f7dbb624"},{"location":{"line":17,"column":5},"keyword":"Then ","text":"User should navigate to Forgot your password page","id":"7f8c1e9e-081f-42ef-9666-96aaeedec5d8"}],"id":"565d344d-6da0-49d1-b009-19fb2a90b809"}},{"scenario":{"location":{"line":19,"column":3},"keyword":"Scenario Outline","name":"Login Scenario for empty Password field","steps":[{"location":{"line":20,"column":5},"keyword":"Given ","text":"User navigates to login page","id":"fe323df2-b49b-4db0-ba3c-e9d435344a99"},{"location":{"line":21,"column":5},"keyword":"When ","text":"User enters email address as \"\u003cemail\u003e\"","id":"bccf0e3d-b058-4032-a7a3-9a3d684165f7"},{"location":{"line":22,"column":5},"keyword":"And ","text":"User clicks on Sign In button","id":"89832dfd-8065-4ac6-89ee-631f45c045a8"},{"location":{"line":23,"column":5},"keyword":"Then ","text":"User should see inline error messages for password field","id":"3ebf1f2d-7e52-4fce-be16-33e82e65017f"}],"examples":[{"location":{"line":25,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":26,"column":7},"cells":[{"location":{"line":26,"column":9},"value":"email"}],"id":"95c52fae-672e-4c1e-9fb9-e6c385b1bac6"},"tableBody":[{"location":{"line":27,"column":7},"cells":[{"location":{"line":27,"column":9},"value":"rishabhb441@gmail.com"}],"id":"3f5cbd1f-0b11-4b24-b864-32353088569e"}],"id":"da431f65-c58b-4ca4-b156-a24a98ad08c7"}],"id":"4913d7fe-ce96-4468-96f8-81c4c6eaf8b8"}},{"scenario":{"location":{"line":29,"column":3},"keyword":"Scenario Outline","name":"Login Scenario for invalid Email address","steps":[{"location":{"line":30,"column":5},"keyword":"Given ","text":"User navigates to login page","id":"f48c14ff-24ce-490f-b913-f5ec705439d1"},{"location":{"line":31,"column":5},"keyword":"When ","text":"User enters email address as \"\u003cemail\u003e\"","id":"c42ebd56-3756-4278-9610-12775fa404ba"},{"location":{"line":32,"column":5},"keyword":"And ","text":"User enters password as \"\u003cpassword\u003e\"","id":"48b0e519-f7df-48ee-b434-89d2c0a2f8b4"},{"location":{"line":33,"column":5},"keyword":"And ","text":"User clicks on Sign In button","id":"31e8b0a6-aab2-4d63-8d2a-26192994d048"},{"location":{"line":34,"column":5},"keyword":"Then ","text":"User should see inline error messages for invalid email","id":"b1c5565e-f3a9-4316-a60d-e2eea1e207b9"}],"examples":[{"location":{"line":36,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":37,"column":7},"cells":[{"location":{"line":37,"column":9},"value":"email"},{"location":{"line":37,"column":32},"value":"password"}],"id":"0889695a-02b2-46cf-b1aa-dc8ecbf2d757"},"tableBody":[{"location":{"line":38,"column":7},"cells":[{"location":{"line":38,"column":9},"value":"rishabhb441"},{"location":{"line":38,"column":34},"value":"Comm@0100"}],"id":"1260df65-46d7-4bf6-9ba8-0b99287d1f3c"}],"id":"468dd698-f2b1-450c-94c5-57d5486268e7"}],"id":"15b5ceda-1dee-4b83-a56a-9f47b2be640e"}}]}}},{"pickle":{"id":"427581cb-f6cd-4fd5-90d9-622401f8980a","uri":"file:///Users/risbhard2/Desktop/Comm100/src/test/resources/features/Login.feature","name":"Login with Invalid credentials","language":"en","steps":[{"text":"User navigates to login page","id":"3c98a49d-8f50-4a96-99a4-29e6fa834331","astNodeIds":["f2a2cde0-96b7-4184-be15-679cf1899ba3","e587bfc2-10ba-476c-8300-78549187707d"]},{"text":"User enters the email address as \"rishabhb441@gmail.com\"","id":"4fde4038-4d6a-467d-939a-efdbd991d184","astNodeIds":["cbcef044-b4d8-4ee5-a6fc-ce0f53956cc5","e587bfc2-10ba-476c-8300-78549187707d"]},{"text":"User enters password as \"Comm@0100\"","id":"8d3ace63-af5b-4e06-8e05-61c617a3ecc8","astNodeIds":["f83dc381-158b-45a8-af5b-8fb7ad859a0d","e587bfc2-10ba-476c-8300-78549187707d"]},{"text":"User clicks on Sign In button","id":"59206e76-4824-4eed-a4a6-d5f91fa64374","astNodeIds":["20d0ce0a-5337-4a79-bc39-b71c4ba252a7","e587bfc2-10ba-476c-8300-78549187707d"]},{"text":"User should see error message on Login screen","id":"e9ba0024-9071-424a-be58-9b32f2b8d9bc","astNodeIds":["d6ebcf84-5d87-4d53-b087-3c7ffd8c990e","e587bfc2-10ba-476c-8300-78549187707d"]}],"astNodeIds":["5bbeddf3-1f86-4b75-9c8d-bafaaac7747f","e587bfc2-10ba-476c-8300-78549187707d"]}},{"pickle":{"id":"c6724123-8ba7-425a-ae22-e561debbcb9a","uri":"file:///Users/risbhard2/Desktop/Comm100/src/test/resources/features/Login.feature","name":"Validate Forgot your password navigation","language":"en","steps":[{"text":"User navigates to login page","id":"5b604b89-a704-49f3-bf2f-73473c9b80c4","astNodeIds":["8c8ff54e-622f-4844-b2b8-31e3d47ab3ca"]},{"text":"User clicks on Forgot your password link","id":"2d297ed2-d324-412e-b729-5bef8ad98d9f","astNodeIds":["a7040013-d05b-41a0-aebe-f543f7dbb624"]},{"text":"User should navigate to Forgot your password page","id":"dd1d4b9c-a542-400d-a7a7-c8399727e6de","astNodeIds":["7f8c1e9e-081f-42ef-9666-96aaeedec5d8"]}],"astNodeIds":["565d344d-6da0-49d1-b009-19fb2a90b809"]}},{"pickle":{"id":"41133775-bbe3-4481-8e62-d33a20e96924","uri":"file:///Users/risbhard2/Desktop/Comm100/src/test/resources/features/Login.feature","name":"Login Scenario for empty Password field","language":"en","steps":[{"text":"User navigates to login page","id":"6fde7415-9dbe-49ec-a816-98c863fc6685","astNodeIds":["fe323df2-b49b-4db0-ba3c-e9d435344a99","3f5cbd1f-0b11-4b24-b864-32353088569e"]},{"text":"User enters email address as \"rishabhb441@gmail.com\"","id":"b68b1d90-39cc-42d6-b8ec-e3870fedc5f2","astNodeIds":["bccf0e3d-b058-4032-a7a3-9a3d684165f7","3f5cbd1f-0b11-4b24-b864-32353088569e"]},{"text":"User clicks on Sign In button","id":"333e67e6-1c68-4cd5-9183-a9f91d1b63ce","astNodeIds":["89832dfd-8065-4ac6-89ee-631f45c045a8","3f5cbd1f-0b11-4b24-b864-32353088569e"]},{"text":"User should see inline error messages for password field","id":"a99864dc-e64b-4893-a8fb-386b586f47a6","astNodeIds":["3ebf1f2d-7e52-4fce-be16-33e82e65017f","3f5cbd1f-0b11-4b24-b864-32353088569e"]}],"astNodeIds":["4913d7fe-ce96-4468-96f8-81c4c6eaf8b8","3f5cbd1f-0b11-4b24-b864-32353088569e"]}},{"pickle":{"id":"8afe9e38-cfc9-4922-b901-7be5b4f21af5","uri":"file:///Users/risbhard2/Desktop/Comm100/src/test/resources/features/Login.feature","name":"Login Scenario for invalid Email address","language":"en","steps":[{"text":"User navigates to login page","id":"1df387a4-242a-43a2-8c96-6faac6d7e82f","astNodeIds":["f48c14ff-24ce-490f-b913-f5ec705439d1","1260df65-46d7-4bf6-9ba8-0b99287d1f3c"]},{"text":"User enters email address as \"rishabhb441\"","id":"0b16149d-fe7a-4e05-8ed0-ab44c634f774","astNodeIds":["c42ebd56-3756-4278-9610-12775fa404ba","1260df65-46d7-4bf6-9ba8-0b99287d1f3c"]},{"text":"User enters password as \"Comm@0100\"","id":"54791835-b431-4523-9c39-d5aae31521ff","astNodeIds":["48b0e519-f7df-48ee-b434-89d2c0a2f8b4","1260df65-46d7-4bf6-9ba8-0b99287d1f3c"]},{"text":"User clicks on Sign In button","id":"39a92185-1577-4403-9ab4-d28c5b1fd520","astNodeIds":["31e8b0a6-aab2-4d63-8d2a-26192994d048","1260df65-46d7-4bf6-9ba8-0b99287d1f3c"]},{"text":"User should see inline error messages for invalid email","id":"176c99b4-c4a6-4c51-84fe-948d9117e370","astNodeIds":["b1c5565e-f3a9-4316-a60d-e2eea1e207b9","1260df65-46d7-4bf6-9ba8-0b99287d1f3c"]}],"astNodeIds":["15b5ceda-1dee-4b83-a56a-9f47b2be640e","1260df65-46d7-4bf6-9ba8-0b99287d1f3c"]}},{"hook":{"id":"c50e3b86-2e52-44cf-85dd-81022df1ff12"}},{"stepDefinition":{"id":"741320f1-def9-43e2-a69c-c837c33b718f","pattern":{"source":"User navigates to login page"}}},{"stepDefinition":{"id":"821e261c-b04b-4480-93ed-e30da5429968","pattern":{"source":"User enters the email address as {string}"}}},{"stepDefinition":{"id":"044bb182-4581-4841-9a82-4a2bdbb160e9","pattern":{"source":"User enters password as {string}"}}},{"stepDefinition":{"id":"7178d845-6912-4839-8f86-c18a4da69a6e","pattern":{"source":"User clicks on Sign In button"}}},{"stepDefinition":{"id":"5a285075-22c2-48f9-8ff5-77978f4489be","pattern":{"source":"User should see error message on Login screen"}}},{"stepDefinition":{"id":"f59d359d-5329-46c5-bd75-13e81651ddf4","pattern":{"source":"User clicks on Forgot your password link"}}},{"stepDefinition":{"id":"fd5b6666-15ec-44ab-8dd7-8886522e5d6a","pattern":{"source":"User should navigate to Forgot your password page"}}},{"stepDefinition":{"id":"fdc22ef6-4ed6-43c0-adab-15a69e72cf73","pattern":{"source":"User enters email address as {string}"}}},{"stepDefinition":{"id":"09777e83-bd2f-479d-bf23-034da907df77","pattern":{"source":"User should see inline error messages for password field"}}},{"stepDefinition":{"id":"f620af8c-0e95-489f-ac89-5827a11ae7ae","pattern":{"source":"User should see inline error messages for invalid email"}}},{"hook":{"id":"eccd7
